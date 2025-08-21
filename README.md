@@ -10,8 +10,14 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
 + [Aidan Michael McDonough](https://github.com/amcdonough11)
 + [Moe Wai Yan Myint](https://github.com/mwym2003)
 
-## Getting Started:
-Server source files for this project can be found in ~/337mg054/CDL (internal use only)
+## What I did (Aidan McDonough)
+- Designed and implmented AHB-lite Subordinate interface
+- Created testbenches and verified the functionality of the Subordinate module
+- Integerated USB_RX, USB_TX, Databuffer, and AHB-lite Subordinate to create complete AHB_USB top-level design
+- Created testbenches and verified the functionality of the AHB_USB top-level
+
+*More info on my section of the project is below under **Design Details***
+
 ### + RTL Files:
 The main components making the top level are [usb_tx_wrapper.sv](/source/usb_tx_wrapper.sv), [usb_rx.sv](/source/usb_rx.sv), [data_buffer.sv](/source/data_buffer.sv), and [ahb_lite_satellite.sv](/source/ahb_lite_satellite.sv).</br>
 Submodules System Verilog files can be found in [/source/](/source/) folder.
@@ -59,17 +65,21 @@ Testbenches can be found in [/testbench/](/testbench/) folder.
   
   [tb_usb_tx_fsm](/testbench/tb_usb_tx_fsm) - testbench for the usb tx
   
-### + Reports:
-Synthesis reports can be found in [/reports/](/reports/) folder.
-#### /reports/
-  [ahb_usb.rep](/reports/ahb_usb.rep) - synthesis report file for top level
-  
-  [synth.log](/reports/synth.log) - synthesis log for the top-level of the design ahb usb
-  
-  [ahb_lite_satellite.rep](/reports/ahb_lite_satellite.rep) - synthesis report file for ahb satellite
-  
   [data_buffer.rep](/reports/data_buffer.rep) - synthesis report file for data buffer
   
   [usb_rx.rep](/reports/usb_rx.rep) - synthesis report file for usb receiver
   
   [ubs_tx_wrapper.rep](/reports/ubs_tx_wrapper.rep) - synthesis report file for usb tx
+
+  # Design Details 
+
+  ## AHB-Lite Register Map
+
+  | Address | Access | Size | Description| 
+  | --- | --- | --- | --- |
+  |0x0| Read/Write| 4 Bytes | Data Buffer Reg|
+  |0x4| Read Only | 2 Bytes | Status Reg | 
+  |0x6| Read Only | 2 Bytes | Error Reg|
+  | 0x8| Read Only| 1 Byte | Buffer Occupancy Reg|
+  | 0xC | Read/Write| 1 Byte | TX Packet Control Reg|
+  |0xD| Read/Write| 1 Byte| Flush Buffer Control Reg|
