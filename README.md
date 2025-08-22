@@ -21,6 +21,10 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
   # Design Details 
 
   ## Features
+  | Feature | Description |
+  | --- | --- | 
+  | AHB-Lite Subordinate | Standard `HSEL/HADDR/HTRANS/HSIZE/HWRITE/HWDATA/HRDATA/HRESP`|
+  | Data Buffer | 64 Bytes FIFO; Accessed via Data Buffer Register through AHB Interface|
 
   ## Module Overview
 
