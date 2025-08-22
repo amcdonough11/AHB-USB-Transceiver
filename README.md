@@ -20,6 +20,10 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
 
   # Design Details 
 
+  ## Features
+
+  ## Module Overview
+
   ## AHB-Lite Register Map
 
   | Address | Access | Size | Description| 
@@ -30,3 +34,11 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
   | 0x8| Read Only| 1 Byte | Buffer Occupancy Reg|
   | 0xC | Read/Write| 1 Byte | TX Packet Control Reg|
   |0xD| Read/Write| 1 Byte| Flush Buffer Control Reg|
+
+  ## AHB-Lite Bus Signals
+  
+## Design Notes and Assumptions
+
+## Verification
+
+## Synthesis Results
