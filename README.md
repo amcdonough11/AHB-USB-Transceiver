@@ -23,8 +23,10 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
   ## Features
   | Feature | Description |
   | --- | --- | 
-  | AHB-Lite Subordinate | Standard `HSEL/HADDR/HTRANS/HSIZE/HWRITE/HWDATA/HRDATA/HRESP`|
-  | Data Buffer | 64 Bytes FIFO; Accessed via Data Buffer Register through AHB Interface|
+  | AHB-Lite Subordinate | Standard `HSEL/HADDR/HTRANS/HSIZE/HWRITE/HWDATA/HRDATA/HRESP`; Allows for reads/writes to external USB device|
+  | Data Buffer | 64 Bytes FIFO; Accessed via Data Buffer Register through AHB Interface; Holds both RX data and TX data|
+  | USB RX | Receives USB Transmition via D+ and D- and converts into binary data to be stored in the Data Buffer|
+  | USB TX | Transmits data from the Data Buffer over D+ and D– lines to the external USB device |
 
   ## Module Overview
 
