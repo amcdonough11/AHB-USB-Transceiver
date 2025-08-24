@@ -42,6 +42,23 @@ Design by [Purdue University Elmore Family School of Electrical and Computer Eng
   |0xD| Read/Write| 1 Byte| Flush Buffer Control Reg|
 
   ## AHB-Lite Bus Signals
+
+| Signal         | Description |
+|----------------|-------------|
+| `HCLK` | Bus clock (`clk`). |
+| `HRESETn` | Active-low reset (`n_rst`). |
+| `HSEL`         | Subordinate (slave) select. High when this peripheral is selected. |
+| `HADDR[3:0]`   | Address bus (4 bits). |
+| `HSIZE[2:0]`   | Transfer size: `000` = 8-bit, `001` = 16-bit. Others treated as invalid (error). |
+| `HTRANS[1:0]`  | Transfer type. `SEQ` = sequential, `NONSEQ` = single transfer, `IDLE` allowed. |
+| `HWRITE`       | Transfer direction: `0` = Read, `1` = Write. |
+| `HBURST[2:0]`  | Burst type indicator. |
+| `HWDATA[31:0]` | Write data bus. |
+| `HREADY`       | Ready/Wait signal. Low = stall bus, High = ready. |
+| `HRDATA[31:0]` | Read data bus. |
+| `HRESP`        | Transfer response: `0` = OKAY, `1` = ERROR (invalid address/size). |
+| `HPROT` | Not used. No protection control implemented|
+
   
 ## Design Notes and Assumptions
 
